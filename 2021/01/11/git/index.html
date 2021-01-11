@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、什么是RESTREST是REpresentational State Transfer表述性状态转移 的首字母缩写。它是分布式超媒体系统的架构风格。REST 是面向资源的，而资源则是通过 URI 进行暴露出来 。URI 的设计只要负责把资源通过合理方式暴露出来就可以了，对资源的操作与它无关，操作是通过 HTTP动词来体现。 RESTful 就代表满足REST原则的。 资源设计的接口 ，uri一">
+  <meta name="description" content="1、Git初始化1.查询Git版本库的位 显示版本库.git目录所在的位置    1git rev-parse --git-dir   显示版本库根目录    1git rev-parse --show-toplevel   相对于工作区根目录的相对目录    1git rev-parse --show-prefix  2.配置git版本库 查看所有的配置以及它们所在的文件    1$ git c">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Blog">
-<meta property="og:url" content="http://example.com/2020/12/08/RESTful/index.html">
+<meta property="og:url" content="http://example.com/2021/01/11/git/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="一、什么是RESTREST是REpresentational State Transfer表述性状态转移 的首字母缩写。它是分布式超媒体系统的架构风格。REST 是面向资源的，而资源则是通过 URI 进行暴露出来 。URI 的设计只要负责把资源通过合理方式暴露出来就可以了，对资源的操作与它无关，操作是通过 HTTP动词来体现。 RESTful 就代表满足REST原则的。 资源设计的接口 ，uri一">
+<meta property="og:description" content="1、Git初始化1.查询Git版本库的位 显示版本库.git目录所在的位置    1git rev-parse --git-dir   显示版本库根目录    1git rev-parse --show-toplevel   相对于工作区根目录的相对目录    1git rev-parse --show-prefix  2.配置git版本库 查看所有的配置以及它们所在的文件    1$ git c">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-12-08T15:39:27.171Z">
-<meta property="article:modified_time" content="2020-08-22T11:52:34.010Z">
+<meta property="article:published_time" content="2021-01-11T03:05:40.584Z">
+<meta property="article:modified_time" content="2020-08-22T03:24:50.516Z">
 <meta property="article:author" content="孤">
 <meta name="twitter:card" content="summary">
   
@@ -154,100 +154,68 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-RESTful" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-git" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="一、什么是REST"><a href="#一、什么是REST" class="headerlink" title="一、什么是REST"></a>一、什么是REST</h3><p>REST是<strong>RE</strong>presentational <strong>S</strong>tate <strong>T</strong>ransfer<code>表述性状态转移</code> 的首字母缩写。它是<strong>分布式超媒体系统的</strong>架构风格。REST 是面向资源的，而资源则是通过 URI 进行暴露出来 。URI 的设计只要负责把资源通过合理方式暴露出来就可以了，对资源的操作与它无关，操作是通过 HTTP动词来体现。 <code>RESTful</code> 就代表满足REST原则的。</p>
-<p>资源设计的接口 ，uri一般是使用名词，一般与数据库表名相同，且使用复数。<code>http://xxx.aaa.com./departments/&#123;id&#125;</code></p>
-<h3 id="二、RESTful-API的HTTP方法摘要"><a href="#二、RESTful-API的HTTP方法摘要" class="headerlink" title="二、RESTful API的HTTP方法摘要"></a>二、RESTful API的HTTP方法摘要</h3><table>
-<thead>
-<tr>
-<th>HTTP方法</th>
-<th>CRUD</th>
-<th>整个集合（例如/用户）</th>
-<th>特定项目（例如/ users / 123）</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>POST</td>
-<td>CREATE</td>
-<td>在服务器中新建一个资源。可返回状态码201。</td>
-<td>避免在单一资源上使用POST。非安全</td>
-</tr>
-<tr>
-<td>GET</td>
-<td>SELECT</td>
-<td>从服务器中取出一项或者多项资源。可返回状态码200</td>
-<td>200（OK），单用户。404（未找到），如果找不到ID或无效。</td>
-</tr>
-<tr>
-<td>PUT</td>
-<td>UPDATE</td>
-<td>在服务器中更新资源 <strong>客户端提供改变后的完整资源</strong>。PUT更新整个对象</td>
-<td>200（OK）或204（无内容）。如果未找到ID或无效，请使用404（未找到）。</td>
-</tr>
-<tr>
-<td>PATCH</td>
-<td>UPDATE</td>
-<td>在服务器更新资源。PATCH更新个别的属性。</td>
-<td>200（OK）或204（无内容）。如果未找到ID或无效，请使用404（未找到）。</td>
-</tr>
-<tr>
-<td>DELETE</td>
-<td>DELETE</td>
-<td>404（未找到），除非您要删除整个集合 - 请谨慎使用。</td>
-<td>200（好的）。404（未找到），如果找不到ID或无效。</td>
-</tr>
-<tr>
-<td>OPTIONS</td>
-<td></td>
-<td>获得客户端只对一个资源能够实施的操作。获取该资源的api能够做什么操作的描述。</td>
-<td></td>
-</tr>
-<tr>
-<td>HEAD</td>
-<td></td>
-<td>获得一个资源的元数据(某个属性)，比如一个资源的hash值或者最后修改的日期。</td>
-<td></td>
-</tr>
-</tbody></table>
-<h3 id="三、REST资源命名"><a href="#三、REST资源命名" class="headerlink" title="三、REST资源命名"></a>三、REST资源命名</h3><h4 id="3-1-使用名词来表示资源"><a href="#3-1-使用名词来表示资源" class="headerlink" title="3.1 使用名词来表示资源"></a>3.1 使用名词来表示资源</h4><p>RESTful URI应该引用作为事物（名词）的资源而不是引用动作（动词），因为名词具有动词不具有的属性 - 类似于具有属性的资源。资源的一些示例是：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;api.example.com&#x2F;device-management&#x2F;managed-devices </span><br><span class="line">http:&#x2F;&#x2F;api.example.com&#x2F;device-management&#x2F;managed-devices&#x2F;&#123;device-id&#125; </span><br><span class="line">http:&#x2F;&#x2F;api.example.com&#x2F;user-management&#x2F;users&#x2F;</span><br><span class="line">http:&#x2F;&#x2F;api.example.com&#x2F;user-management&#x2F;users&#x2F;&#123;id&#125;</span><br></pre></td></tr></table></figure>
+        <h3 id="1、Git初始化"><a href="#1、Git初始化" class="headerlink" title="1、Git初始化"></a>1、Git初始化</h3><h4 id="1-查询Git版本库的位"><a href="#1-查询Git版本库的位" class="headerlink" title="1.查询Git版本库的位"></a>1.查询Git版本库的位</h4><ul>
+<li>显示版本库.git目录所在的位置  </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rev-parse --git-dir</span><br></pre></td></tr></table></figure>
 
-<h4 id="3-2-约定"><a href="#3-2-约定" class="headerlink" title="3.2 约定"></a>3.2 约定</h4><p>使用一致的资源命名约定和URI格式，以最小化和最大可读性和可维护性。您可以实现以下设计提示以实现一致性：</p>
-<ol>
-<li><p>使用正斜杠（/）表示层次关系</p>
-<p>正斜杠（/）字符用于URI的路径部分，以指示资源之间的层次关系。例如</p>
-<p><a target="_blank" rel="noopener" href="http://api.example.com/device-management">http://api.example.com/device-management</a><br><a target="_blank" rel="noopener" href="http://api.example.com/device-management/managed-devices">http://api.example.com/device-management/managed-devices</a><br><a target="_blank" rel="noopener" href="http://api.example.com/device-management/managed-devices/%7Bid%7D">http://api.example.com/device-management/managed-devices/{id}</a><br><a target="_blank" rel="noopener" href="http://api.example.com/device-management/managed-devices/%7Bid%7D/scripts">http://api.example.com/device-management/managed-devices/{id}/scripts</a><br><a target="_blank" rel="noopener" href="http://api.example.com/device-management/managed-devices/%7Bid%7D/scripts/%7Bid%7D">http://api.example.com/device-management/managed-devices/{id}/scripts/{id}</a></p>
-</li>
-<li><p>不要在URI中使用尾部正斜杠（/）</p>
-<p>作为URI路径中的最后一个字符，正斜杠（/）不会添加语义值，并可能导致混淆。最好完全放弃它们。</p>
-<p><a target="_blank" rel="noopener" href="http://api.example.com/device-management/managed-devices/">http://api.example.com/device-management/managed-devices/</a><br><a target="_blank" rel="noopener" href="http://api.example.com/device-management/managed-devices">http://api.example.com/device-management/managed-devices</a> /<em>This is much better version</em>/</p>
-</li>
-<li><p>使用连字符（ - ）来提高URI的可读性</p>
-<p>要使您的URI易于扫描和解释，请使用连字符（ - ）字符来提高长路径段中名称的可读性。</p>
-<p><a target="_blank" rel="noopener" href="http://api.example.com/inventory-management/managed-entities/%7Bid%7D/install-script-location">http://api.example.com/inventory-management/managed-entities/{id}/install-script-location</a> //More readable<br><a target="_blank" rel="noopener" href="http://api.example.com/inventory-management/managedEntities/%7Bid%7D/installScriptLocation">http://api.example.com/inventory-management/managedEntities/{id}/installScriptLocation</a> //Less readable</p>
-</li>
-<li><p>不要使用下划线（_）</p>
-<p>可以使用下划线代替连字符作为分隔符 - 但是根据应用程序的字体，下划线（_）字符可能会在某些浏览器或屏幕中被部分遮挡或完全隐藏。</p>
-<p>为避免这种混淆，请使用连字符（ - ）而不是下划线（_）。</p>
-<p><a target="_blank" rel="noopener" href="http://api.example.com/inventory-management/managed-entities/%7Bid%7D/install-script-location">http://api.example.com/inventory-management/managed-entities/{id}/install-script-location</a> //More readable<br><a target="_blank" rel="noopener" href="http://api.example.com/inventory_management/managed_entities/%7Bid%7D/install_script_location">http://api.example.com/inventory_management/managed_entities/{id}/install_script_location</a> //More error prone</p>
-</li>
-<li><p>在URI中使用小写字母</p>
-<p>方便时，URI路径中应始终首选小写字母。</p>
-<p><a target="_blank" rel="noopener" href="http://www.rfc-base.org/txt/rfc-3986.txt">RFC 3986</a>将URI定义为区分大小写，但方案和主机组件除外。例如</p>
-<p><a target="_blank" rel="noopener" href="http://api.example.org/my-folder/my-doc">http://api.example.org/my-folder/my-doc</a> //1<br><a target="_blank" rel="noopener" href="http://api.example.org/my-folder/my-doc">HTTP://API.EXAMPLE.ORG/my-folder/my-doc</a> //2<br><a target="_blank" rel="noopener" href="http://api.example.org/My-Folder/my-doc">http://api.example.org/My-Folder/my-doc</a> //3</p>
-<p>在上面的例子中，1和2是相同的，但3不是因为它使用大写字母的<strong>My-Folder</strong>。</p>
-</li>
-<li><p>不要使用文件扩展名</p>
-<p>文件扩展名看起来很糟糕，不会增加任何优势。删除它们也会减少URI的长度。没理由保留它们。</p>
-<p>除了上述原因，如果您想使用文件扩展突出显示API的媒体类型，那么您应该依赖于通过<code>Content-Type</code>标题传达的媒体类型来确定如何处理正文的内容。</p>
-<p><a target="_blank" rel="noopener" href="http://api.example.com/device-management/managed-devices.xml">http://api.example.com/device-management/managed-devices.xml</a> /<em>Do not use it</em>/<br><a target="_blank" rel="noopener" href="http://api.example.com/device-management/managed-devices">http://api.example.com/device-management/managed-devices</a> /<em>This is correct URI</em>/</p>
-</li>
-</ol>
+<ul>
+<li>显示版本库根目录  </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rev-parse --show-toplevel</span><br></pre></td></tr></table></figure>
 
+<ul>
+<li>相对于工作区根目录的相对目录  </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rev-parse --show-prefix</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-配置git版本库"><a href="#2-配置git版本库" class="headerlink" title="2.配置git版本库"></a>2.配置git版本库</h4><ul>
+<li>查看所有的配置以及它们所在的文件  </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git config --list --show-origin</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在~/home/生成配置文件.gitconfig<br>Git的三个配置文件分别是版本库级别的<strong>配置文件</strong>、<strong>全局配置文件</strong>（用户主目录下）和<strong>系统级配置文件</strong>（/etc目录下）。其中版本库级别配置文件的优先级最高，全局配置文件其次，系统级配置文件优先级最低。  </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git config [--unset][--global][--system] user.name name #unset删除配置</span><br><span class="line">git config [--global][--system] user.emial email</span><br><span class="line">git config [--global][--system] push.default matching</span><br><span class="line">git config [--global][--system] core.quotepath false</span><br><span class="line">git config [--global][--system] core.editor &quot;vim&quot;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>配置命令别名</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global alias.ci &quot;commit -s&quot;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-配置github的SSH"><a href="#3-配置github的SSH" class="headerlink" title="3.配置github的SSH"></a>3.配置github的SSH</h4><ul>
+<li>执行命令即在~\home.ssh\下得到两个文件：<strong>id_rsa</strong>和<strong>id_rsa.pub</strong>，公钥文件id_rsa.pub 即可添加到github上  </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-kengen -t rsa -C email</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-Git创建"><a href="#5-Git创建" class="headerlink" title="5.Git创建"></a>5.Git创建</h4><ul>
+<li>初次创建仓库  </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init [--bare] </span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>git init命令创建的普通的GIT仓库，–bare 参数将创建一个裸仓库，包含”.git”目录（记录版本历史），不含项目源文件拷贝，不可以操作。如果你进入版本目录，你会发现仅有”.git”目录，没有其他文件，通常是作为共享库。</p>
+</blockquote>
+<h4 id="6-Git添加文件"><a href="#6-Git添加文件" class="headerlink" title="6.Git添加文件"></a>6.Git添加文件</h4><ul>
+<li>将文件或者修改添加至索引库(暂存区)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git add &lt;path&gt;</span><br><span class="line">git add -u [&lt;path&gt;]  #跟踪所有文件中被修改过或已删除文件的信息添加到索引库,它不会处理那些不被跟踪的文件。</span><br><span class="line">git add -A [&lt;path&gt;] #文件中被修改过或已删除文件和所有未跟踪的文件信息添加到索引库。</span><br><span class="line">git add -i [&lt;path&gt;] #查看中被所有修改过或已删除文件但没有提交的文件.</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-Git提交文件"><a href="#7-Git提交文件" class="headerlink" title="7.Git提交文件"></a>7.Git提交文件</h4><ul>
+<li>将暂存区里的改动给提交到<strong>本地</strong>的版本库  </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git commit -m msg</span><br><span class="line">git commit --amend </span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="2-Git暂存区"><a href="#2-Git暂存区" class="headerlink" title="2.Git暂存区"></a>2.Git暂存区</h3>
       
 
       
@@ -326,7 +294,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/12/08/RESTful/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/01/11/git/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -340,7 +308,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/01/11/bashell/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/01/11/java%E9%9B%86%E5%90%88/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -349,6 +317,11 @@
       </div>
     </a>
   
+  
+    <a href="/2021/01/11/bashell/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
